@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>VitaMeet | Online Doctor Consultations</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Hero Section with Background */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('img/medical-bg.jpg') center/cover no-repeat;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .quick-action {
+            background: var(--primarycolor);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .quick-action:hover {
+            background: var(--primarycolorhover);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-container">
+      <div>
+        <span class="vitameet-logo">VitaMeet.</span>
+        <span class="vitameet-logo-sub">| HEALTHCARE ON YOUR SCHEDULE</span>
+      </div>
+      <div>
+        <a href="login.php" class="btn btn-outline">LOGIN</a>
+        <a href="signup.php" class="btn btn-primary">REGISTER</a>
+      </div>
+    </header>
+  
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>Avoid Hassles & Delays</h1>
+        <p class="sub-text2">Not feeling well today? Let us help you connect with a doctor — fast and free.</p>
+        
+        <div class="quick-options">
+            <!-- Appointment -->
+            <div class="quick-option" 
+                 data-popup="appointmentPopup"
+                 onclick="togglePopup('appointmentPopup')">
+              <svg class="quick-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/>
+              </svg>
+              Get Appointment
+            </div>
+            
+            <!-- Symptom Checker -->
+            <div class="quick-option" 
+                 data-popup="symptomPopup"
+                 onclick="togglePopup('symptomPopup')">
+              <svg class="quick-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-13h-2v6h2zm0 8h-2v2h2z"/>
+              </svg>
+              I feel bad
+            </div>
+            
+            <!-- Emergency -->
+            <div class="quick-option emergency-option"
+                 data-popup="emergencyPopup"
+                 onclick="togglePopup('emergencyPopup')">
+              <svg class="quick-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm1-13h-2v6h2zm0 8h-2v2h2z"/>
+              </svg>
+              Emergency
+            </div>
+          </div>
+        
+        <a href="login.php" class="btn btn-primary btn-lg">Make Appointment</a>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-nav">
+          <a href="#">About</a>
+          <a href="#">Reviews</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-credit">
+          A Web Solution by <span class="developer-name">Daksh</span>
+        </div>
+      </footer>
+
+    <!-- Appointment Popup -->
+<div id="appointmentPopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close">&times;</button>
+      <h3>Book Appointment</h3>
+      <form>
+        <input type="text" placeholder="Full Name" class="input-text">
+        <input type="tel" placeholder="Phone" class="input-text">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </form>
+    </div>
+  </div>
+  <div id="symptomPopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close">&times;</button>
+      <h3>Symptom Checker</h3>
+      
+      <div class="symptom-flow">
+        <!-- Step 1: Symptom Selection -->
+        <div class="step active" data-step="1">
+          <h4>What's bothering you?</h4>
+          <div class="symptom-options">
+            <button class="symptom-chip" data-symptom="fever">🤒 Fever</button>
+            <button class="symptom-chip" data-symptom="headache">🤕 Headache</button>
+            <button class="symptom-chip" data-symptom="cough">😷 Cough/Cold</button>
+            <button class="symptom-chip" data-symptom="stomach">🤢 Stomach Issue</button>
+          </div>
+        </div>
+        
+        <!-- Step 2: Severity Rating -->
+        <div class="step" data-step="2">
+          <h4>How severe is it?</h4>
+          <div class="severity-scale">
+            <button class="severity-btn" data-level="1">Mild</button>
+            <button class="severity-btn" data-level="2">Moderate</button>
+            <button class="severity-btn" data-level="3">Severe</button>
+          </div>
+        </div>
+        
+        <!-- Step 3: Smart Recommendation -->
+        <div class="step" data-step="3">
+          <div class="recommendation">
+            <p>Based on your symptoms:</p>
+            <h4>👉 Consult a General Physician</h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Repeat similar structure for other popups with IDs: symptomPopup, emergencyPopup -->
+  </body>
+</html>

@@ -1,0 +1,983 @@
+@import url('font-inter.css');
+:root {
+  --primarycolor: #3CB371;         /* Soft green - keep your existing */
+  --primarycolorhover: #32a363;    /* Slightly darker green */
+  --secondarycolor: #2a7fba;       /* Complementary blue */
+  --lightbg: #F5F9FF;              /* Very light blue for backgrounds */
+  --textcolor: #333;               /* Main text color */
+  --textsecondary: #555;           /* Secondary text */
+  --bordercolor: #e0e8f5;          /* Light border color */
+  --white: #fff;
+  --gray-light: #f5f5f5;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+
+/*------custom-scroll-bar - from w3schools.com------------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 12px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+
+
+
+.input-text{
+    border-radius: 4px;
+    border: 0.5px solid rgb(226, 226, 226);
+    padding: 10px;
+    width: 92%;
+    transition: 0.2s;
+    outline: none;
+}
+
+.input-text{
+    border: 1px solid #e9ecef;
+    font-size: 14px;
+    line-height: 26px;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.input-text:hover{
+    background-color: rgb(250, 250, 250);
+    transition: 0.2s;
+    outline: none;
+}
+
+.input-text:focus{
+    border: 1px solid rgb(10,118,216);
+    transition: 0.2s;
+}
+
+.input-text::placeholder{
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+/* -----------Buttons---------------*/
+.btn{
+    cursor: pointer;
+    padding: 8px 20px;
+    outline: none;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    margin: 5px 10px 5px 0;
+}
+
+
+.btn:hover{
+    background-color: var(--primarycolorhover);
+    box-shadow: none;
+    transition: all 0.5s;
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+.btn-primary{
+    background-color: var(--primarycolor) ;
+    border: 1px solid var(--primarycolor) ;
+    color: #fff ;
+    box-shadow: 0 3px 5px 0 rgba(57,108,240,0.3);
+}
+
+.btn-primary-soft{
+    background-color: #D8EBFA ;
+    /*border: 1px solid rgba(57,108,240,0.1) ;*/    color: #1969AA;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    /*box-shadow: 0 3px 5px 0 rgba(57,108,240,0.3)*/
+}
+
+
+.btn-primary-soft:hover{
+    background-color: var(--primarycolor) ;
+    /*border: 1px solid rgba(57,108,240,0.1) ;*/
+    color: #fff ;
+    box-shadow: 0 3px 5px 0 rgba(57,108,240,0.3);
+}
+
+
+.btn-in-text{
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.non-style-link:link, .non-style-link:visited, .non-style-link:hover, .non-style-link:active{
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+}
+
+
+
+
+.btn-label{
+    margin-left: 10px;
+    padding: 12px 12px;
+    outline: none;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    background-color: #f0f0f073;
+    border: 1px solid rgba(57,108,240,0.1) ;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+/*gpt code*/
+.container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+
+.sub-table,
+.filter-container {
+  width: 92.5%;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  margin-bottom: 20px;
+  border-spacing: 0;
+}
+
+
+.filter-container-items{
+  margin-top: 7.5px;
+  margin-left: 20px;
+
+
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+
+.table-headin{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 3px solid var(--primarycolor);
+}
+
+.abc{
+  width: 100%;
+  height: 550px;
+  overflow: auto;
+}
+
+
+
+
+
+        
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    opacity: 1;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+    
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: var(--primarycolorhover);
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+
+input[type=search] {
+    background-image: url('../img/search.svg');
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    padding: 8px 20px 8px 40px;
+}
+
+input[type=search]:focus {
+    transition: 0.5s;
+}
+
+.box {
+  width: 120px;
+  height: 30px;
+  border: 1px solid #e9ecef;
+  font-size: 14px;
+  color: #212529;
+  background-color: #fff;
+  line-height: 26px;
+  font-weight: 300;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  width: 100%;
+  background-clip: padding-box;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+.btn-primary-gray{
+  background-color: #fff;
+  border: 2px solid #c9cbce9f;
+  color: #212529d0;
+  box-shadow: 0 3px 5px 0 rgba(95, 95, 97, 0.3);
+}
+
+
+
+.btn-primary-gray:hover{
+  background-color: #5185ffa9;
+  box-shadow: 0 3px 5px 0 rgba(95, 95, 97, 0.3);
+}
+
+
+
+.button-icon{
+  
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  padding: 8px 20px 8px 40px;
+}
+
+
+
+.menu-btn{
+  padding:6px;
+  color: #3b3b3b;
+  background-position: 30% 50%;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  
+}
+
+.menu-text{
+  padding-left: 40%;
+  font-weight: 500;
+  font-size: 16px;
+  
+}
+
+
+.menu-active{
+  color: var(--primarycolor);
+  border-right: 7px solid var(--primarycolor);
+  background-color: var();
+}
+
+.menu-btn:hover{
+  background-color: var(--btnice);
+  color: var(--primarycolor);
+}
+
+.non-style-link-menu:link, .non-style-link-menu:visited,  .non-style-link-menu:active{
+  text-decoration: none;
+  color: #3b3b3b;
+}
+.non-style-link-menu:hover{
+  text-decoration: none;
+  color: var(--primarycolor);
+}
+
+.non-style-link-menu-active:link, .non-style-link-menu-active:visited,  .non-style-link-menu-active:active{
+  text-decoration: none;
+  color: var(--primarycolor);
+}
+
+
+
+.menu-icon-dashbord{
+  background-image: url('../img/icons/dashboard.svg');
+}
+
+
+.menu-icon-doctor{
+  background-image: url('../img/icons/doctors.svg');
+}
+.menu-icon-schedule{
+  background-image: url('../img/icons/schedule.svg');
+}
+.menu-icon-appoinment{
+  background-image: url('../img/icons/book.svg');
+}
+.menu-icon-patient{
+  background-image: url('../img/icons/patients.svg');
+}
+.menu-icon-settings{
+  background-image: url('../img/icons/settings.svg');
+}
+
+.menu-icon-session{
+  background-image: url('../img/icons/session.svg');
+}
+.menu-icon-home{
+  background-image: url('../img/icons/home.svg');
+}
+
+
+
+.menu-icon-dashbord:hover,.menu-icon-dashbord-active{
+  color: var(--primarycolor);
+
+  background-image: url('../img/icons/dashboard-hover.svg');
+}
+
+
+.menu-icon-doctor:hover,.menu-icon-doctor-active{
+  color: var(--primarycolor);
+  background-image: url('../img/icons/doctors-hover.svg');
+}
+.menu-icon-schedule:hover,.menu-icon-schedule-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/schedule-hover.svg');
+}
+.menu-icon-appoinment:hover,.menu-icon-appoinment-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/book-hover.svg');
+}
+.menu-icon-patient:hover,.menu-icon-patient-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/patients-hover.svg');
+}
+
+.menu-icon-settings:hover,.menu-icon-settings-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/settings-iceblue.svg');
+}
+
+.menu-icon-session:hover,.menu-icon-session-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/session-iceblue.svg');
+}
+.menu-icon-home:hover,.menu-icon-home-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/home-iceblue.svg');
+}
+
+
+
+
+
+.btn-icon-back{
+  background-image: url('../img/icons/back-iceblue.svg');
+  background-position: 18px 50%;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  padding: 8px 20px 8px 40px;
+}
+
+.btn-icon-back:hover{
+  background-image: url('../img/icons/back-white.svg');
+}
+
+
+.btn-edit{
+  background-image: url('../img/icons/edit-iceblue.svg');
+}
+.btn-edit:hover{
+  background-image: url('../img/icons/edit-white.svg');
+}
+
+.btn-view{
+  background-image: url('../img/icons/view-iceblue.svg');
+}
+.btn-view:hover{
+  background-image: url('../img/icons/view-white.svg');
+}
+
+.btn-delete{
+  background-image: url('../img/icons/delete-iceblue.svg');
+}
+.btn-delete:hover{
+  background-image: url('../img/icons/delete-white.svg');
+}
+
+.btn-filter{
+  background-image: url('../img/icons/filter-iceblue.svg');
+  background-position: 15px 50%;
+}
+.btn-filter:hover{
+  background-image: url('../img/icons/filter-white.svg');
+}
+
+
+
+
+.dashboard-items{
+  
+  border: 2px solid #c9cbce9f;
+  border-radius: 7px;
+  color: var(--primarycolor);
+  /*background-color: #d8ebfa25 ;*/
+  /*box-shadow: 0 3px 5px 0 rgba(95, 95, 97, 0.3);*/
+}
+
+
+.h1-dashboard{
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 0;
+  padding-top: 20px;
+}
+
+.h3-dashboard{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #212529e3;
+}
+
+.dashboard-icons{
+  background-color: rgba(184, 184, 184, 0.247);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 7px;
+  margin-left: 40px;
+  margin-right: 0px;
+  
+}
+.dashboard-icons-setting{
+  background-color: rgba(184, 184, 184, 0.247);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 7px;
+  margin-left: 5px;
+  margin-right: 20px;
+  
+}
+
+.setting-tabs:hover{
+  background-color: #d6d6d657;
+}
+
+/* Add to your main.css */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.quick-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.quick-option {
+  background-color: var(--white);
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--bordercolor);
+  color: var(--textcolor);
+  font-weight: 500;
+}
+
+.quick-option:hover {
+  background-color: var(--primarycolor);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(60, 179, 113, 0.3) !important;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--textsecondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primarycolor);
+}
+
+.footer-daksh {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+      flex-direction: column;
+      padding: 15px;
+  }
+  
+  .vitameet-logo, .vitameet-logo-sub {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+  
+  .auth-buttons {
+      margin-top: 10px;
+  }
+  
+  .heading-text {
+      font-size: 2rem;
+  }
+  
+  .quick-options {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .quick-option {
+      width: 80%;
+      text-align: center;
+  }
+}
+
+/* uppar gpt*/
+
+.doctor-header{
+  background-image: url(../img/bg01.jpg);
+  color: rgba(0, 0, 0, 0.87);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  padding-left: 35px;
+}
+
+.patient-header{
+  background-image: url(../img/b3.jpg);
+}
+
+.search-items{
+  padding:20px;
+  margin:10px;
+  width:95%;
+  display: flex;
+  padding-left:0;
+  padding-left: 30px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  box-shadow: 0 3px 5px 0 rgba(95, 95, 97, 0.068);
+}
+
+
+.h1-search{
+  margin: 0;
+  padding: 0;
+  font-size: 23px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.h3-search{
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #212529e3;
+  
+}
+
+.h4-search{
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #212529e3;
+}
+
+.btn-book{
+  background-image: url('../img/icons/book-balck.svg');
+  background-position: 68% 50%;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+}
+
+/* ====== ADD THESE NEW STYLES AT THE BOTTOM ====== */
+/* Header & Logo */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vitameet-logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primarycolor);
+}
+
+.vitameet-logo-sub {
+  font-size: 16px;
+  color: var(--textsecondary);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+            url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Quick Actions */
+.quick-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+.quick-option {
+  background: var(--white);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid var(--bordercolor);
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.quick-option:hover {
+  background: var(--primarycolor);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.main-footer {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: var(--textsecondary);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .quick-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Add to your main.css */
+.main-footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--bordercolor);
+  margin-top: 3rem;
+}
+
+.footer-nav {
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+  color: var(--textcolor);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: var(--primarycolor);
+}
+
+.footer-credit {
+  color: var(--textsecondary);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.developer-name {
+  font-weight: 600;
+  color: var(--primarycolor);
+}
+
+/* Login Button Fix */
+a.btn-outline {
+  border: 2px solid var(--primarycolor) !important;
+  color: var(--primarycolor) !important;
+  background: transparent !important;
+}
+
+a.btn-outline:hover {
+  background: var(--primarycolor) !important;
+  color: white !important;
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Quick Options Enhancements */
+.quick-option {
+  position: relative;
+  padding-left: 40px; /* Space for icon */
+  transition: all 0.3s ease;
+}
+
+.quick-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primarycolor);
+}
+
+.emergency-option {
+  color: #e74c3c;
+}
+.emergency-option .quick-icon {
+  color: #e74c3c;
+}
+
+/* Symptom Wizard Styles */
+.symptom-flow {
+  position: relative;
+  min-height: 200px;
+}
+
+.step {
+  display: none;
+  animation: fadeIn 0.3s;
+}
+.step.active { display: block; }
+
+.symptom-options, .severity-scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.symptom-chip, .severity-btn {
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 1px solid var(--bordercolor);
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.symptom-chip:hover, .severity-btn:hover {
+  background: var(--lightbg);
+}
+
+.symptom-chip.selected, .severity-btn.selected {
+  background: var(--primarycolor);
+  color: white;
+  border-color: var(--primarycolor);
+}
+
+.recommendation {
+  text-align: center;
+  padding: 20px 0;
+}
