@@ -161,6 +161,41 @@
     </div>
   </div>
   
+  <!-- Emergency Popup -->
+<div id="emergencyPopup" class="popup-overlay emergency-popup">
+  <div class="popup-content">
+    <div class="emergency-header">
+      <span class="emergency-alert">🚨</span>
+      <h3>Emergency Assistance</h3>
+    </div>
+    
+    <div class="emergency-actions">
+      <!-- Immediate Actions -->
+      <button class="emergency-btn" onclick="callEmergency()">
+        <i class="icon-phone"></i>
+        Call Emergency Services
+      </button>
+      
+      <button class="emergency-btn" onclick="connectDoctor()">
+        <i class="icon-video"></i>
+        Video Call a Doctor Now
+      </button>
+      
+      <!-- Emergency Info -->
+      <div class="emergency-info">
+        <h4>If you're experiencing:</h4>
+        <ul>
+          <li>Chest pain</li>
+          <li>Difficulty breathing</li>
+          <li>Severe bleeding</li>
+          <li>Stroke symptoms</li>
+        </ul>
+        <p>Seek in-person care immediately</p>
+      </div>
+    </div>
+  </div>
+</div>
+  
   <!-- Repeat similar structure for other popups with IDs: symptomPopup, emergencyPopup -->
   </body>
 </html>

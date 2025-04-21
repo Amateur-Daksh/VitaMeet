@@ -65,3 +65,27 @@ function goToStep(step) {
   document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
   currentStep = step;
 }
+
+// Emergency Functions
+function callEmergency() {
+  // For web: Show emergency numbers
+  // For mobile: Initiate phone call
+  window.location.href = "tel:112"; // Universal emergency number
+  logEmergencyEvent('called_services');
+}
+
+function connectDoctor() {
+  // Start immediate video consultation
+  showPopup('videoCallPopup');
+  logEmergencyEvent('video_doctor');
+  
+  // Add your video call implementation here
+}
+
+function logEmergencyEvent(eventType) {
+  // Send to analytics/backend
+  fetch('/log-emergency', {
+    method: 'POST',
+    body: JSON.stringify({ event: eventType })
+  });
+}
